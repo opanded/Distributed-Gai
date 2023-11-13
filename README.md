@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # Distributed-MADDPG
-Distributed Multi-Agent Cooperation Algorithm based on MADDPG with prioritized batch data.
+基于批处理数据优先级的MADDPG分布式多智能体协作算法
 
 ## Distributed Multi-Agent Architecture
 <p align="center">
@@ -8,13 +8,13 @@ Distributed Multi-Agent Cooperation Algorithm based on MADDPG with prioritized b
 </p>
 
 ## Introduction
-This work focus on Multi-Agent Cooperation Problem. We proposed a method which consists 3 components:
-1. Related research - MADDPG
-This algorithm comes from [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf)
-2. Prioritized Batch Data
-To optimize one-step update without losing diversity, we divide batch data into several parts and prioritize these batches. Using the batch data with maximal loss to do one-step update.
-3. Distributed Multi-Agent Architecture
-Similar to A3C algorithm, we adopt this Master and Multi-Worker architecture in our work.
+本文主要研究多智能体协作问题。我们提出了一种由三部分组成的方法：
+1. 相关研究基础 - MADDPG
+算法来自 [Multi-Agent Actor-Critic for Mixed Cooperative-Competitive Environments](https://arxiv.org/pdf/1706.02275.pdf)
+2. 批处理数据的优先级
+为了在不失去多样性的情况下优化一步更新，我们将批处理数据分为几个部分，并对这些批处理进行优先级排序。使用损失最大的批处理数据进行一步更新。
+3. Distributed 多智能体 Architecture
+与A3C算法类似，我们在工作中采用了Master和Multi-Worker架构。
 
 ## Experiment
 ### Implementation
@@ -24,7 +24,7 @@ Similar to A3C algorithm, we adopt this Master and Multi-Worker architecture in 
 - CUDA 8.0 + cuDNN 6.0
 
 ### Environment
-- Modified original environment (you can find in my repo) from [OpenAI](https://github.com/openai/multiagent-particle-envs)
+- 修改后的原始环境 from [OpenAI](https://github.com/openai/multiagent-particle-envs)
 	- Fixed landmark
 	- Border
 <p align="center">
@@ -59,12 +59,12 @@ Similar to A3C algorithm, we adopt this Master and Multi-Worker architecture in 
 </p>
 
 ## How to run this program
-For program using MPI:
+使用 MPI 的程序:
 - mpiexec -np [worker_number] python mpi-xxx.py
 ```python
 mpiexec -np 4 python mpirun_main.py
 ```
-For others:
+其他程序:
 ```python
 python xxx.py
 ```
